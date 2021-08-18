@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-<com.naver.maps.map.MapView
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:map="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/map_view"
-android:layout_width="match_parent"
-android:layout_height="match_parent" >
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="다른페이지"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="203dp"
-        android:layout_height="105dp"
-        android:text="테스트 맵입니다."
-        android:textSize="24sp" />
-</com.naver.maps.map.MapView>
+    <com.naver.maps.map.MapView
+        android:id="@+id/map_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        map:layout_constraintBottom_toTopOf="@+id/button2"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.0"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        map:layout_constraintVertical_bias="0.0">
+
+
+    </com.naver.maps.map.MapView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
