@@ -15,6 +15,7 @@ import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.MapView;
 import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.OnMapReadyCallback;
+import com.naver.maps.map.overlay.LocationOverlay;
 import com.naver.maps.map.overlay.Marker;
 
 import java.util.ArrayList;
@@ -40,15 +41,24 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback {
         double latitude = intent.getDoubleExtra("latitude", 0);
         double longitude = intent.getDoubleExtra("longitude", 0);
 
+        LocationOverlay locationOverlay = naverMap.getLocationOverlay();
+        locationOverlay.setVisible(true);
+
+
+        locationOverlay.setPosition(new LatLng(latitude, longitude));
         List<Marker> markers = new ArrayList<>();
 
         for(int i=0 ; i <10; i++){
             Marker marker = new Marker();
-            marker.setPosition(new LatLng(latitude*(i*0.1), longitude*(i*0.1)));
+            marker.setPosition(new LatLng(latitude*(i*0.001), longitude*(i*0.001)));
             markers.add(marker);
             markers.get(i).setMap(naverMap);
         }
+
         Log.d("MapNaver", String.valueOf(markers)) ;
+
+
+
 //        Marker marker = new Marker();
 //        Marker marker2 = new Marker();
 //        marker.setPosition(new LatLng(latitude, longitude));
