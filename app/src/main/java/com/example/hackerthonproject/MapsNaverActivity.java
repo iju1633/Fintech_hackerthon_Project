@@ -20,6 +20,7 @@ import androidx.annotation.Nullable;
 
 import com.example.hackerthonproject.Retrofit.RetrofitAPI;
 import com.example.hackerthonproject.Retrofit.RetrofitCall;
+import com.example.hackerthonproject.dto.LocationDto;
 import com.example.hackerthonproject.dto.UserDto;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.journeyapps.barcodescanner.CaptureActivity;
@@ -30,6 +31,8 @@ import com.naver.maps.map.OnMapReadyCallback;
 import com.naver.maps.map.overlay.LocationOverlay;
 import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.overlay.Overlay;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -59,33 +62,6 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
         mapView.getMapAsync(this);
         txt2 = findViewById(R.id.textView2);
 
-        RetrofitCall retrofit = new RetrofitCall();
-
-        RetrofitAPI retrofitAPI = retrofit.getRetrofit().create(RetrofitAPI.class);
-
-        Call<UserDto> call = retrofitAPI.getUser(2);
-
-        call.enqueue(new Callback<UserDto>() {
-            @Override
-            public void onResponse(Call<UserDto> call, Response<UserDto> response) {
-                //response 확인
-                if (response.code() != 200) {
-                    txt2.setText("Check");
-                    return;
-                }
-                //Get the data into textView
-                String jsony = "";
-                jsony = "ID = " + response.body().getId() +
-                        "Name = " + response.body().getName();
-                txt2.append(jsony);
-            }
-
-            @Override
-            public void onFailure(Call<UserDto> call, Throwable t) {
-                Log.wtf("err123", t);
-                Log.d("IDIDID", "5시작");
-            }
-        });
     }
 
     @Override
@@ -99,6 +75,35 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
         LocationOverlay locationOverlay = naverMap.getLocationOverlay();
         locationOverlay.setVisible(true);
         locationOverlay.setPosition(new LatLng(latitude, longitude));
+
+        RetrofitCall retrofit = new RetrofitCall();
+
+        RetrofitAPI retrofitAPI = retrofit.getRetrofit().create(RetrofitAPI.class);
+
+        Call<List<LocationDto>> call = retrofitAPI.getLocationList();
+
+        call.enqueue(new Callback<List<LocationDto>>() {
+            @Override
+            public void onResponse(Call<List<LocationDto>> call, Response<List<LocationDto>> response) {
+                //response 확인
+                if (response.code() != 200) {
+                    txt2.setText("Check");
+                    return;
+                }
+                for(int i = 0; i < response.body().size(); i++){
+                    Marker marker = new Marker();
+                    marker.setPosition(new LatLng(Double.parseDouble(response.body().get(i).getLatitude()),Double.parseDouble(response.body().get(i).getLongitude())));
+                    marker.setCaptionText(response.body().get(i).getName());
+                    marker.setMap(naverMap);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<LocationDto>> call, Throwable t) {
+                Log.wtf("err123", t);
+                Log.d("IDIDID", "5시작");
+            }
+        });
 
 
         LatLng coord = new LatLng(37.5670135, 126.9783740);

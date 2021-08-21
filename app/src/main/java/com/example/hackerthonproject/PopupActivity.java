@@ -26,9 +26,7 @@ import android.widget.ImageButton;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 
-import com.example.hackerthonproject.Retrofit.UserService;
 
 
 public class PopupActivity extends Activity implements View.OnClickListener {
@@ -54,9 +52,6 @@ public class PopupActivity extends Activity implements View.OnClickListener {
                 Intent intent = new Intent(getApplicationContext(), PopupActivity.class);
                 startActivity(intent);
 
-
-                UserService userService = new UserService();
-                System.out.println(userService.getUserDto());
             }
         });
 

@@ -20,7 +20,7 @@ public interface RetrofitAPI {
     Call<UserDto> getUser(@Path("id") int id);
 
     @GET("location/all")
-    Call<List<LocationDto> > getLocationList();
+    Call<List<LocationDto>> getLocationList();
 
 
     // ResponseBody 자리는 어떤 타입으로 응답을 받을건지 적어두는 곳이다.
