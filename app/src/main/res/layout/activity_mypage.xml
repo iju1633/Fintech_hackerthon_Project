@@ -36,18 +36,6 @@
         tools:layout_editor_absoluteY="273dp" />
 
     <TextView
-        android:id="@+id/phoneNum"
-        android:layout_width="410dp"
-        android:layout_height="49dp"
-        android:layout_x="9dp"
-        android:layout_y="424dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="휴대폰                  010-XXXX-XXXX"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="542dp" />
-
-    <TextView
         android:id="@+id/image"
         android:layout_width="410dp"
         android:layout_height="49dp"
@@ -75,8 +63,8 @@
         android:id="@+id/logOut"
         android:layout_width="410dp"
         android:layout_height="49dp"
-        android:layout_x="11dp"
-        android:layout_y="589dp"
+        android:layout_x="9dp"
+        android:layout_y="543dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="로그아웃"
@@ -88,7 +76,7 @@
         android:layout_width="410dp"
         android:layout_height="49dp"
         android:layout_x="10dp"
-        android:layout_y="538dp"
+        android:layout_y="492dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="환경설정"
@@ -100,7 +88,7 @@
         android:layout_width="410dp"
         android:layout_height="49dp"
         android:layout_x="10dp"
-        android:layout_y="491dp"
+        android:layout_y="441dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="설정"

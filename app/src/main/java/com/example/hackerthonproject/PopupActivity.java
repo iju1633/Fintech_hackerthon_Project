@@ -32,7 +32,7 @@ public class PopupActivity extends Activity implements View.OnClickListener {
 
     Button myPage, level, Description_Level;
     ImageButton imageButton;
-    TextView message, point, wallet, breakdown, profile, image, phoneNum, setting, settings, logOut;
+    TextView message, point, wallet, breakdown, profile, image, setting, settings, logOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +61,6 @@ public class PopupActivity extends Activity implements View.OnClickListener {
         breakdown = findViewById(R.id.breakdown);
         profile = findViewById(R.id.profile);
         image = findViewById(R.id.image);
-        phoneNum = findViewById(R.id.phoneNum);
         setting = findViewById(R.id.setting);
         settings = findViewById(R.id.settings);
         logOut = findViewById(R.id.logOut);
