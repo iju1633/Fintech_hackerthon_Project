@@ -7,14 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".MapsNaverActivity">
 
+
     <com.naver.maps.map.MapView
         android:id="@+id/mapView"
         android:name="com.naver.maps.map.MapFragment"
-        android:layout_width="414dp"
-        android:layout_height="531dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"/>
-
+        android:layout_width="397dp"
+        android:layout_height="499dp"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        map:layout_constraintVertical_bias="0.116" />
 
     <EditText
         android:id="@+id/mapInfo_MyPage"
@@ -22,8 +25,10 @@
         android:layout_height="105dp"
         android:layout_marginBottom="100dp"
         map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
         map:layout_constraintTop_toTopOf="@+id/mapView"
-        tools:layout_editor_absoluteX="0dp" />
+        map:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterButton
         android:id="@+id/QR_Scan"
