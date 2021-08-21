@@ -12,17 +12,25 @@ import java.util.List;
 import retrofit2.Call;
 
 public class UserService {
+
         public UserDto getUserDto(){
+
                 int id = 1;
-                UserDto userDto = new UserDto();
+
                 Call<UserDto> getUser = RetrofitClient.getApiService().getUser(id);
-                userDto = (UserDto) getUser;
-                System.out.println(userDto.getId());
-                System.out.println(userDto.getName());
-                System.out.println(userDto.getEmail());
-                System.out.println(userDto.getPassword());
+
+                UserDto userDto = new UserDto();
+                try {
+                        userDto = getUser.execute().body();
+                        System.out.println(userDto.getId());
+                        System.out.println(userDto.getName());
+                        System.out.println(userDto.getEmail());
+                        System.out.println(userDto.getPassword());
+
+                }
+                catch (IOException ex){
+                        ex.getMessage();
+                }
                 return userDto;
         }
-
-
 }

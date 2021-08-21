@@ -12,6 +12,7 @@ public class RetrofitClient {
     private static final String BASE_URL = "http://localhost:8080";
 
     // service
+    // 싱글톤 패턴
     public static RetrofitAPI getApiService(){
         // json 응답을 객체로 변환해준다.
         return getInstance().create(RetrofitAPI.class);

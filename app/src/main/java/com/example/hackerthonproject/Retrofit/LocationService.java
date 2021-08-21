@@ -1,7 +1,6 @@
 package com.example.hackerthonproject.Retrofit;
 
 import com.example.hackerthonproject.dto.LocationDto;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

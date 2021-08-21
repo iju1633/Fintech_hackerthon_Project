@@ -101,6 +101,10 @@ public class PopupActivity extends Activity implements View.OnClickListener {
                 point = (Button)findViewById(v.getId());
 
                 txt.setText(info());
+
+                UserService userService = new UserService();
+                System.out.println(userService.getUserDto().getName());
+
             }
         };
 
