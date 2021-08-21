@@ -64,7 +64,7 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
         mapView = findViewById(R.id.mapView);
         mapView.getMapAsync(this);
 
-//        reits = findViewById(R.id.reits);
+        reits = findViewById(R.id.reits);
 
 //         메시지 한 가운데로
          mapInfo_MyPage.setGravity(Gravity.CENTER);
