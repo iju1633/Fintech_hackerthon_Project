@@ -28,6 +28,7 @@ public class MainTest {
             System.out.println(user.getName());
             System.out.println(user.getEmail());
             System.out.println(user.getPassword());
+            System.out.println("git test");
 
         }
         catch (IOException ex){
