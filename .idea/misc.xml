@@ -3,9 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/activity_maps.xml" value="0.1" />
         <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/activity_mypage.xml" value="0.1" />
         <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/naver_activity_maps.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_mypage.xml" value="0.34378794213709113" />
+        <entry key="app/src/main/res/layout/naver_activity_maps.xml" value="0.1897644927536232" />
       </map>
     </option>
   </component>

@@ -19,6 +19,7 @@ public class PopupActivity extends Activity implements View.OnClickListener {
     Button myPage, level, Description_Level;
     ImageButton imageButton;
     TextView message, point, wallet, breakdown, profile, image, phoneNum, setting, settings, logOut;
+    TextView userPoint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +52,7 @@ public class PopupActivity extends Activity implements View.OnClickListener {
         setting = findViewById(R.id.setting);
         settings = findViewById(R.id.settings);
         logOut = findViewById(R.id.logOut);
-
+        userPoint = findViewById(R.id.userPoint);
 
 //        popupWindow();
 
@@ -81,14 +82,12 @@ public class PopupActivity extends Activity implements View.OnClickListener {
 
         if (view == myPage) { // view가 alert 이면 팝업실행 즉 버튼을 누르면 팝업창이 뜨는 조건
 
-
             Context mContext = getApplicationContext();
             LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(LAYOUT_INFLATER_SERVICE);
 
             //R.layout.dialog는 xml 파일명이고  R.id.popup은 보여줄 레이아웃 아이디
             View layout = inflater.inflate(R.layout.activity_mypage, (ViewGroup) findViewById(R.id.popup));
             AlertDialog.Builder aDialog = new AlertDialog.Builder(PopupActivity.this);
-
 
             //그냥 닫기버튼을 위한 부분
             aDialog.setNegativeButton("닫기", new DialogInterface.OnClickListener() {

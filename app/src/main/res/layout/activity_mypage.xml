@@ -43,7 +43,6 @@
         android:layout_y="424dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="휴대폰                  010-XXXX-XXXX"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="542dp" />
 
@@ -110,13 +109,13 @@
     <TextView
         android:id="@+id/point"
         android:layout_width="410dp"
-        android:layout_height="49dp"
+        android:layout_height="46dp"
         android:layout_x="8dp"
         android:layout_y="218dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="포인트                2000P"
         android:onClick="point"
+        android:text="포인트"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="322dp" />
 
@@ -183,5 +182,15 @@
         android:text="Button"
         tools:layout_editor_absoluteX="23dp"
         tools:layout_editor_absoluteY="238dp" />
+
+    <TextView
+        android:id="@+id/userPoint"
+        android:layout_width="199dp"
+        android:layout_height="wrap_content"
+        android:layout_x="174dp"
+        android:layout_y="228dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
 
 </AbsoluteLayout>
