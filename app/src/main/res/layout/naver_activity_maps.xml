@@ -15,18 +15,6 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp"/>
 
-    <Button
-        android:id="@+id/myPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="myPage"
-        android:text="MyPage"
-        tools:ignore="OnClick"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="721dp"
-        map:layout_constraintBottom_toBottomOf="parent"
-        map:layout_constraintEnd_toEndOf="parent"
-        />
 
     <EditText
         android:id="@+id/mapInfo_MyPage"
@@ -58,6 +46,16 @@
         map:layout_constraintBottom_toBottomOf="parent"
         map:layout_constraintStart_toStartOf="parent"
         map:srcCompat="@drawable/cash_icon"
+        tools:ignore="OnClick" />
+
+    <ImageButton
+        android:id="@+id/myPage"
+        android:layout_width="119dp"
+        android:layout_height="91dp"
+        android:onClick="myPage"
+        android:src="@drawable/icon_mypage"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
         tools:ignore="OnClick" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

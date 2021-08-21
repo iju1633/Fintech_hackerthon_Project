@@ -110,9 +110,7 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
         return false;
     }
 
-
     public void home(View view){
-
 
     }
 
@@ -151,7 +149,6 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
         dialog.setNegativeButton("닫기", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-
                 }
         });
 
