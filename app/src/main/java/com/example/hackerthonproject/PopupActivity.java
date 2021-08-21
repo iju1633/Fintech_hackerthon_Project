@@ -27,6 +27,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.example.hackerthonproject.Retrofit.UserService;
+
 
 public class PopupActivity extends Activity implements View.OnClickListener {
 
@@ -38,6 +40,8 @@ public class PopupActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage);
 
@@ -48,6 +52,10 @@ public class PopupActivity extends Activity implements View.OnClickListener {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), PopupActivity.class);
                 startActivity(intent);
+
+
+                UserService userService = new UserService();
+                System.out.println(userService.getUserDto());
             }
         });
 
@@ -67,6 +75,8 @@ public class PopupActivity extends Activity implements View.OnClickListener {
         settings = findViewById(R.id.settings);
         logOut = findViewById(R.id.logOut);
         userPoint = findViewById(R.id.userPoint);
+
+
 
 //        popupWindow();
 
