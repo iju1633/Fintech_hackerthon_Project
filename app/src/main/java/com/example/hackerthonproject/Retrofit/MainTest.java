@@ -16,12 +16,16 @@ public class MainTest {
     public static void main(String[] args){
         // controller
         int id = 1;
-        Call<UserDto> getUser = RetrofitClient.getApiService().getUser(id);
+
         Call<List<LocationDto>> getLocation = RetrofitClient.getApiService().getLocationList();
+        List<LocationDto> locationDtoList = new ArrayList<>();
+        for (LocationDto locationDto : locationDtoList = (List<LocationDto>) getLocation) {
+            System.out.println(locationDto.getName());
+        }
+        ;
+        Call<UserDto> getUser = RetrofitClient.getApiService().getUser(id);
 
         LocationService locationService = new LocationService();
-
-        System.out.println(locationService.getAddress());
 
 //            List<LocationDto> locationDto = new ArrayList<LocationDto>();
 //            locationDto = getLocation.execute().body();

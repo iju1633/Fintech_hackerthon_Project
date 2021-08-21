@@ -18,6 +18,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.hackerthonproject.Retrofit.LocationService;
 import com.example.hackerthonproject.Retrofit.RetrofitClient;
 import com.example.hackerthonproject.dto.LocationDto;
 import com.example.hackerthonproject.dto.UserDto;
@@ -49,6 +50,8 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
     String MyPage_Message = "마이페이지 정보가 조회되었습니다.";
 
     IntentIntegrator integrator;
+    static LocationService locationService = new LocationService();
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,64 +60,38 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
 
         mapView = findViewById(R.id.mapView);
         mapView.getMapAsync(this);
-
     }
 
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {
+
         Intent intent = getIntent();
+
+
         double latitude = intent.getDoubleExtra("latitude", 0);
         double longitude = intent.getDoubleExtra("longitude", 0);
         LocationOverlay locationOverlay = naverMap.getLocationOverlay();
         locationOverlay.setVisible(true);
         locationOverlay.setPosition(new LatLng(latitude, longitude));
-        List<Marker> markers = new ArrayList<>();
-        for(int i=0 ; i <10; i++){
-            Marker marker = new Marker();
-            marker.setPosition(new LatLng(latitude*(i*0.001), longitude*(i*0.001)));
-            markers.add(marker);
-            markers.get(i).setMap(naverMap);
-        }
+
         //////////////////////////
-        Call<List<LocationDto>> getLocation = RetrofitClient.getApiService().getLocationList();
-
-        try {
-            List<LocationDto> locationDto = new ArrayList<LocationDto>();
-            locationDto = getLocation.execute().body();
-//            for(int i = 0; i < locationDto.length()){
-//
-//            }
-//            System.out.println("locationDto = " + locationDto.get(0).getAddress());;
-            Log.d("location", String.valueOf(locationDto.get(0).getAddress()));
-        }
-        catch (IOException ex){
-            ex.printStackTrace();
-        }
+        Marker locationMarker = new Marker();
+//        locationMarker.setPosition(new LatLng(locationService.getLatitude(0),126.978374));
+//            locationMarker.setCaptionText(locationService.getName(i));
+//        locationMarker.setMap(naverMap);
+//        for(int i =0; i <5; i++){
+//            Marker locationMarker = new Marker();
+//            locationMarker.setPosition(new LatLng(locationService.getLatitude(i),locationService.getLongitude(i)));
+////            locationMarker.setCaptionText(locationService.getName(i));
+//            locationMarker.setMap(naverMap);
+//        }
         //////////////////////////////
-
-
-        Marker markerTest = new Marker();
-        //마커 포시션 설정
-        markerTest.setPosition(new LatLng(latitude, longitude));
-        //마커 텍스트 설정
-        markerTest.setCaptionText("Hello");
-        markerTest.setOnClickListener(this);
-        markerTest.setMap(naverMap);
 
         LatLng coord = new LatLng(37.5670135, 126.9783740);
 
         Toast.makeText(this,
                 "위도: " + coord.latitude + ", 경도: " + coord.longitude,
                 Toast.LENGTH_SHORT).show();
-
-//        mLocationSource = new FusedLocationSource(this.PERMISSION_REQUEST_CODE);
-//        Log.d("MapNaver", String.valueOf(markers)) ;
-//        Marker marker = new Marker();
-//        Marker marker2 = new Marker();
-//        marker.setPosition(new LatLng(latitude, longitude));
-//        marker2.setPosition(new LatLng(37.5670135, 126.9783740));
-//        marker.setMap(naverMap);
-//        marker2.setMap(naverMap);
     }
 
     public void mOnClick(View v){

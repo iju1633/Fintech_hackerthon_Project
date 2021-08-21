@@ -3,6 +3,7 @@ package com.example.hackerthonproject.dto;
 import com.google.gson.annotations.SerializedName;
 
 public class UserDto {
+
     public UserDto() {
     }
 
