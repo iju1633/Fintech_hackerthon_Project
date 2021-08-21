@@ -30,7 +30,7 @@
 
     <EditText
         android:id="@+id/mapInfo_MyPage"
-        android:layout_width="406dp"
+        android:layout_width="405dp"
         android:layout_height="105dp"
         android:layout_marginBottom="92dp"
         map:layout_constraintBottom_toBottomOf="parent"
