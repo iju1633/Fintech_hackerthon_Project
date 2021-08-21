@@ -41,7 +41,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class MapsNaverActivity extends Activity implements OnMapReadyCallback, View.OnClickListener,Overlay.OnClickListener {
+public class MapsNaverActivity extends Activity implements OnMapReadyCallback, View.OnClickListener, Overlay.OnClickListener {
 
     MapView mapView;
     TextView test1;
@@ -63,7 +63,6 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
 
         mapView = findViewById(R.id.mapView);
         mapView.getMapAsync(this);
-        txt2 = findViewById(R.id.textView2);
 
         reits = findViewById(R.id.reits);
 
@@ -77,42 +76,31 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
 
         Intent intent = getIntent();
 
-
         double latitude = intent.getDoubleExtra("latitude", 0);
         double longitude = intent.getDoubleExtra("longitude", 0);
         LocationOverlay locationOverlay = naverMap.getLocationOverlay();
         locationOverlay.setVisible(true);
         locationOverlay.setPosition(new LatLng(latitude, longitude));
 
-        RetrofitCall retrofit = new RetrofitCall();
 
-        RetrofitAPI retrofitAPI = retrofit.getRetrofit().create(RetrofitAPI.class);
+        Marker marker = new Marker();
+        marker.setPosition(new LatLng(37.5670135, 126.9783740));
+        marker.setMap(naverMap);
 
-        Call<List<LocationDto>> call = retrofitAPI.getLocationList();
+        marker.setWidth(100);
+        marker.setHeight(100);
+        marker.setOnClickListener(this::onClick);
 
-        call.enqueue(new Callback<List<LocationDto>>() {
-            @Override
-            public void onResponse(Call<List<LocationDto>> call, Response<List<LocationDto>> response) {
-                //response 확인
-                if (response.code() != 200) {
-                    txt2.setText("Check");
-                    return;
-                }
-                for(int i = 0; i < response.body().size(); i++){
-                    Marker marker = new Marker();
-                    marker.setPosition(new LatLng(Double.parseDouble(response.body().get(i).getLatitude()),Double.parseDouble(response.body().get(i).getLongitude())));
-                    marker.setCaptionText(response.body().get(i).getName());
-                    marker.setMap(naverMap);
-                }
-            }
+        LocationService locationService = new LocationService();
+        List<LocationDto> locationDtoList = locationService.getLocationList();
 
-            @Override
-            public void onFailure(Call<List<LocationDto>> call, Throwable t) {
-                Log.wtf("err123", t);
-                Log.d("IDIDID", "5시작");
-            }
-        });
-
+        for(int i =0; i < locationDtoList.size(); i++){
+            Marker locationMark = new Marker();
+            locationMark.setPosition(new LatLng(Double.parseDouble(locationDtoList.get(i).getLatitude()), Double.parseDouble(locationDtoList.get(i).getLongitude())));
+            locationMark.setCaptionText(locationDtoList.get(i).getName());
+            locationMark.setOnClickListener(this);
+            locationMark.setMap(naverMap);
+        }
 
         LatLng coord = new LatLng(37.5670135, 126.9783740);
 
@@ -121,16 +109,10 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
                 Toast.LENGTH_SHORT).show();
     }
 
-    public void mOnClick(View v){
-        Intent intent = new Intent(this, SubActivity.class);
-        startActivity(intent);
-    }
-
     @Override
     public boolean onClick(@NonNull Overlay overlay) {
         if (overlay instanceof Marker) {
 
-            test1.setText("클릭한 문자열");
             Toast.makeText(this.getApplicationContext(), "마커가 선택되었습니다", Toast.LENGTH_LONG).show();
             return true;
         }

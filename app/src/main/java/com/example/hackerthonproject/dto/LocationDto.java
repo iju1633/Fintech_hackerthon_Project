@@ -61,6 +61,9 @@ public class LocationDto {
         this.kinds = kinds;
     }
 
+    public String getImg() {
+        return img;
+    }
 
     private int id;
     private String name;
@@ -68,5 +71,8 @@ public class LocationDto {
     private String latitude;
     private String longitude;
     private String explanation;
+    private String img;
+
+
     private int kinds;
 }
