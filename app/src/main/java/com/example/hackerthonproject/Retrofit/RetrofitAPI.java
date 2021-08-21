@@ -3,6 +3,8 @@ package com.example.hackerthonproject.Retrofit;
 import com.example.hackerthonproject.dto.LocationDto;
 import com.example.hackerthonproject.dto.UserDto;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -18,7 +20,7 @@ public interface RetrofitAPI {
     Call<UserDto> getUser(@Path("id") int id);
 
     @GET("/location/all")
-    Call<LocationDto> getLocation();
+    Call<List<LocationDto>> getLocation();
 
 
     // ResponseBody 자리는 어떤 타입으로 응답을 받을건지 적어두는 곳이다.
