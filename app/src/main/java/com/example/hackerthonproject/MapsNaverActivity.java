@@ -7,11 +7,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,14 +45,15 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
 
     MapView mapView;
     TextView test1;
-    EditText mapInfo_MyPage;
-    Button home, QR_Scan;
+    TextView mapInfo_MyPage;
     TextView txt2;
 
     String QR_Scan_Message = "QR 코드가 스캔되었습니다.";
     String MyPage_Message = "마이페이지 정보가 조회되었습니다.";
 
     IntentIntegrator integrator;
+
+    ImageButton reits, home, QR_Scan;
 
 
     @Override
@@ -61,6 +64,11 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
         mapView = findViewById(R.id.mapView);
         mapView.getMapAsync(this);
         txt2 = findViewById(R.id.textView2);
+
+        reits = findViewById(R.id.reits);
+
+        // 메시지 한 가운데로
+        // mapInfo_MyPage.setGravity(Gravity.CENTER);
 
     }
 
@@ -135,21 +143,13 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
 
     public void QR_Scan(View view){
 
-        // mapInfo_MyPage.setText(QR_Scan_Message);
+        Intent intent = new Intent(MapsNaverActivity.this, QrScanActivity.class) ;
+        startActivity(intent) ;
 
-        integrator = new IntentIntegrator(this);
+    }
 
-        integrator.setPrompt("QR 코드를 사각형 안에 위치 시켜주세요");
+    public void reits(View view){
 
-        //QR 코드 인식 시에 삐- 소리가 나게 할것인지 여부
-        integrator.setBeepEnabled(true);
-
-        integrator.setBarcodeImageEnabled(true);
-
-        integrator.setCaptureActivity(CaptureActivity.class);
-
-        //스캐너 시작 메소드
-        integrator.initiateScan();
     }
 
     public void myPage(View view){

@@ -16,50 +16,35 @@
         map:layout_constraintEnd_toEndOf="parent"
         map:layout_constraintStart_toStartOf="parent"
         map:layout_constraintTop_toTopOf="parent"
-        map:layout_constraintVertical_bias="0.116" />
+        map:layout_constraintVertical_bias="0.116" >
 
-    <EditText
+
+    </com.naver.maps.map.MapView>
+
+    <TextView
         android:id="@+id/mapInfo_MyPage"
         android:layout_width="406dp"
         android:layout_height="105dp"
         android:layout_marginBottom="100dp"
+        android:text="                              자유롭게 아이콘을 눌러보세요"
         map:layout_constraintBottom_toBottomOf="parent"
         map:layout_constraintEnd_toEndOf="parent"
         map:layout_constraintStart_toStartOf="parent"
         map:layout_constraintTop_toTopOf="@+id/mapView"
         map:layout_constraintVertical_bias="1.0" />
 
+
     <androidx.constraintlayout.utils.widget.ImageFilterButton
         android:id="@+id/QR_Scan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="85dp"
+        android:layout_height="95dp"
+        android:layout_marginBottom="4dp"
         android:onClick="QR_Scan"
         map:layout_constraintBottom_toBottomOf="parent"
         map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.665"
         map:layout_constraintStart_toStartOf="parent"
         map:srcCompat="@drawable/qr_icon"
-        tools:ignore="OnClick"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="719dp" />
-
-    <androidx.constraintlayout.utils.widget.ImageFilterButton
-        android:id="@+id/home"
-        android:layout_width="117dp"
-        android:layout_height="92dp"
-        android:onClick="home"
-        map:layout_constraintBottom_toBottomOf="parent"
-        map:layout_constraintStart_toStartOf="parent"
-        map:srcCompat="@drawable/cash_icon"
-        tools:ignore="OnClick" />
-
-    <ImageButton
-        android:id="@+id/myPage"
-        android:layout_width="119dp"
-        android:layout_height="91dp"
-        android:onClick="myPage"
-        android:src="@drawable/icon_mypage"
-        map:layout_constraintBottom_toBottomOf="parent"
-        map:layout_constraintEnd_toEndOf="parent"
         tools:ignore="OnClick" />
 
     <TextView
@@ -70,5 +55,42 @@
         map:layout_constraintEnd_toEndOf="parent"
         map:layout_constraintStart_toStartOf="parent"
         map:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/reits"
+        android:layout_width="85dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="4dp"
+        android:onClick="reits"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:srcCompat="@drawable/reits_icon"
+        tools:ignore="OnClick" />
+
+    <ImageButton
+        android:id="@+id/home"
+        android:layout_width="85dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="96dp"
+        android:onClick="home"
+        android:src="@drawable/home_icon"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        map:layout_constraintVertical_bias="0.992"
+        tools:ignore="OnClick" />
+
+    <ImageButton
+        android:id="@+id/myPage"
+        android:layout_width="85dp"
+        android:layout_height="95dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:onClick="myPage"
+        android:src="@drawable/mypage_icon"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="OnClick" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
