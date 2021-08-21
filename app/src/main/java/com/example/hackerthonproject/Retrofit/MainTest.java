@@ -17,24 +17,25 @@ public class MainTest {
         // controller
         int id = 1;
         Call<UserDto> getUser = RetrofitClient.getApiService().getUser(id);
-        Call<List<LocationDto>> getLocation = RetrofitClient.getApiService().getLocation();
-        System.out.println("asdf"+RetrofitClient.getApiService().getLocation().getClass().getName());
+        Call<List<LocationDto>> getLocation = RetrofitClient.getApiService().getLocationList();
 
-        try {
-            List<LocationDto> locationDto = new ArrayList<LocationDto>();
-            locationDto = getLocation.execute().body();
-            System.out.println("locationDto = " + locationDto.get(0).getAddress());;
-            UserDto user = new UserDto();
-            user = getUser.execute().body();
-            System.out.println(user.getId());
-            System.out.println(user.getName());
-            System.out.println(user.getEmail());
-            System.out.println(user.getPassword());
-            System.out.println("git test");
+        LocationService locationService = new LocationService();
 
-        }
-        catch (IOException ex){
-            ex.printStackTrace();
-        }
+        System.out.println(locationService.getAddress());
+
+//            List<LocationDto> locationDto = new ArrayList<LocationDto>();
+//            locationDto = getLocation.execute().body();
+//
+//            System.out.println("locationDto = " + locationDto.get(0).getAddress());
+//
+//            UserDto user = new UserDto();
+//            user = getUser.execute().body();
+//            System.out.println(user.getId());
+//            System.out.println(user.getName());
+//            System.out.println(user.getEmail());
+//            System.out.println(user.getPassword());
+//            System.out.println("git test");
+
+
     }
 }
