@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/popup"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="700dp"
+    android:minHeight="700dp"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/breakdown"
+        android:layout_width="410dp"
+        android:layout_height="49dp"
+        android:layout_x="9dp"
+        android:layout_y="268dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="적립내역"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="371dp" />
+
+    <TextView
+        android:id="@+id/wallet"
+        android:layout_width="410dp"
+        android:layout_height="49dp"
+        android:layout_x="8dp"
+        android:layout_y="171dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="나의 지갑"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="273dp" />
+
+    <TextView
+        android:id="@+id/phoneNum"
+        android:layout_width="410dp"
+        android:layout_height="49dp"
+        android:layout_x="9dp"
+        android:layout_y="424dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="휴대폰                  010-XXXX-XXXX"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="542dp" />
+
+    <TextView
+        android:id="@+id/image"
+        android:layout_width="410dp"
+        android:layout_height="49dp"
+        android:layout_x="9dp"
+        android:layout_y="373dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="이미지"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="640dp" />
+
+    <TextView
+        android:id="@+id/profile"
+        android:layout_width="410dp"
+        android:layout_height="49dp"
+        android:layout_x="10dp"
+        android:layout_y="324dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="프로필"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="446dp" />
+
+    <TextView
+        android:id="@+id/logOut"
+        android:layout_width="410dp"
+        android:layout_height="49dp"
+        android:layout_x="11dp"
+        android:layout_y="589dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="로그아웃"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="681dp" />
+
+    <TextView
+        android:id="@+id/settings"
+        android:layout_width="410dp"
+        android:layout_height="49dp"
+        android:layout_x="10dp"
+        android:layout_y="538dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="환경설정"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="640dp" />
+
+    <TextView
+        android:id="@+id/setting"
+        android:layout_width="410dp"
+        android:layout_height="49dp"
+        android:layout_x="10dp"
+        android:layout_y="491dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="설정"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="591dp" />
+
+    <TextView
+        android:id="@+id/point"
+        android:layout_width="410dp"
+        android:layout_height="49dp"
+        android:layout_x="8dp"
+        android:layout_y="218dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="포인트                2000P"
+        android:onClick="point"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="322dp" />
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="376dp"
+        android:layout_height="48dp"
+        android:layout_x="3dp"
+        android:layout_y="110dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="VIP까지 포인트 4000점 남았습니다!"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="198dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="104dp"
+        android:layout_height="99dp"
+        android:layout_x="2dp"
+        android:layout_y="10dp"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="78dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/level"
+        android:layout_width="72dp"
+        android:layout_height="37dp"
+        android:layout_x="106dp"
+        android:layout_y="10dp"
+        android:text="GOLD"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="78dp" />
+
+    <Button
+        android:id="@+id/Description_Level"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_x="180dp"
+        android:layout_y="9dp"
+        android:text="등급별 혜택보기"
+        tools:layout_editor_absoluteX="236dp"
+        tools:layout_editor_absoluteY="78dp" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="85dp"
+        android:layout_height="51dp"
+        android:layout_x="111dp"
+        android:layout_y="61dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="허원영 님"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="126dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="229dp"
+        android:layout_height="9dp"
+        android:layout_x="1dp"
+        android:layout_y="147dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="23dp"
+        tools:layout_editor_absoluteY="238dp" />
+
+</AbsoluteLayout>

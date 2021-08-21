@@ -1,31 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    tools:context=".MapsNaverActivity">
 
     <com.naver.maps.map.MapView
-        android:id="@+id/map_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        map:layout_constraintEnd_toEndOf="parent"
-        map:layout_constraintHorizontal_bias="0.0"
-        map:layout_constraintStart_toStartOf="parent"
-        map:layout_constraintTop_toTopOf="parent">
-    </com.naver.maps.map.MapView>
+        android:id="@+id/mapView"
+        android:name="com.naver.maps.map.MapFragment"
+        android:layout_width="414dp"
+        android:layout_height="531dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"/>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="405dp"
-        android:layout_height="172dp"
-        android:text="문자열2"
+    <Button
+        android:id="@+id/myPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="myPage"
+        android:text="MyPage"
+        tools:ignore="OnClick"
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="721dp"
         map:layout_constraintBottom_toBottomOf="parent"
         map:layout_constraintEnd_toEndOf="parent"
-        map:layout_constraintHorizontal_bias="0.428"
+        />
+
+    <EditText
+        android:id="@+id/mapInfo_MyPage"
+        android:layout_width="406dp"
+        android:layout_height="105dp"
+        android:layout_marginBottom="92dp"
+        map:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="2dp" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterButton
+        android:id="@+id/QR_Scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="QR_Scan"
+        map:srcCompat="@drawable/qr_icon"
+        tools:ignore="OnClick"
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="719dp"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.constraintlayout.utils.widget.ImageFilterButton
+        android:id="@+id/home"
+        android:layout_width="117dp"
+        android:layout_height="92dp"
+        android:onClick="home"
+        map:layout_constraintBottom_toBottomOf="parent"
         map:layout_constraintStart_toStartOf="parent"
-        map:layout_constraintTop_toTopOf="parent"
-        map:layout_constraintVertical_bias="0.989" />
+        map:srcCompat="@drawable/cash_icon"
+        tools:ignore="OnClick" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

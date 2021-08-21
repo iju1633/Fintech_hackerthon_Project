@@ -1,99 +1,122 @@
 package com.example.hackerthonproject;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.journeyapps.barcodescanner.CaptureActivity;
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.MapView;
 import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.OnMapReadyCallback;
-import com.naver.maps.map.overlay.LocationOverlay;
 import com.naver.maps.map.overlay.Marker;
-import com.naver.maps.map.overlay.Overlay;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
-public class MapsNaverActivity extends Activity implements OnMapReadyCallback, Overlay.OnClickListener {
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
-    private MapView mapView;
-    TextView test1;
+
+public class MapsNaverActivity extends Activity implements OnMapReadyCallback, View.OnClickListener {
+
+    MapView mapView;
+    EditText mapInfo_MyPage;
+    Button home, QR_Scan;
+
+    String QR_Scan_Message = "QR 코드가 스캔되었습니다.";
+    String MyPage_Message = "마이페이지 정보가 조회되었습니다.";
+
+    IntentIntegrator integrator;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.naver_activity_maps);
 
-        mapView = findViewById(R.id.map_view);
+        mapView = findViewById(R.id.mapView);
         mapView.getMapAsync(this);
 
-        test1 =(TextView)findViewById(R.id.textView2);
-        test1.setText("문자들간다");
     }
 
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {
-        Intent intent = getIntent();
-        double latitude = intent.getDoubleExtra("latitude", 0);
-        double longitude = intent.getDoubleExtra("longitude", 0);
-
-        LocationOverlay locationOverlay = naverMap.getLocationOverlay();
-        locationOverlay.setVisible(true);
-
-
-        locationOverlay.setPosition(new LatLng(latitude, longitude));
-        List<Marker> markers = new ArrayList<>();
-
-        for(int i=0 ; i <10; i++){
-            Marker marker = new Marker();
-            marker.setPosition(new LatLng(latitude*(i*0.001), longitude*(i*0.001)));
-            markers.add(marker);
-            markers.get(i).setMap(naverMap);
-        }
-        Marker markerTest = new Marker();
-        //마커 포시션 설정
-        markerTest.setPosition(new LatLng(latitude, longitude));
-        //마커 텍스트 설정
-        markerTest.setCaptionText("Hello");
-        markerTest.setOnClickListener(this);
-        markerTest.setMap(naverMap);
-
-        LatLng coord = new LatLng(37.5670135, 126.9783740);
-
-        Toast.makeText(this,
-                "위도: " + coord.latitude + ", 경도: " + coord.longitude,
-                Toast.LENGTH_SHORT).show();
-
-//        mLocationSource = new FusedLocationSource(this.PERMISSION_REQUEST_CODE);
-//        Log.d("MapNaver", String.valueOf(markers)) ;
-//        Marker marker = new Marker();
-//        Marker marker2 = new Marker();
-//        marker.setPosition(new LatLng(latitude, longitude));
-//        marker2.setPosition(new LatLng(37.5670135, 126.9783740));
-//        marker.setMap(naverMap);
-//        marker2.setMap(naverMap);
+        Marker marker = new Marker();
+        marker.setPosition(new LatLng(37.5670135, 126.9783740));
+        marker.setMap(naverMap);
     }
 
-    public void mOnClick(View v){
-        Intent intent = new Intent(this, SubActivity.class);
-        startActivity(intent);
+    public void onClick(View view){
+
     }
 
-    @Override
-    public boolean onClick(@NonNull Overlay overlay) {
-        if (overlay instanceof Marker) {
 
-            test1.setText("클릭한 문자열");
-            Toast.makeText(this.getApplicationContext(), "마커가 선택되었습니다", Toast.LENGTH_LONG).show();
-            return true;
-        }
-        return false;
+    public void home(View view){
+
+
     }
+
+    public void QR_Scan(View view){
+
+        // mapInfo_MyPage.setText(QR_Scan_Message);
+
+        integrator = new IntentIntegrator(this);
+
+        integrator.setPrompt("QR 코드를 사각형 안에 위치 시켜주세요");
+
+        //QR 코드 인식 시에 삐- 소리가 나게 할것인지 여부
+        integrator.setBeepEnabled(true);
+
+        integrator.setBarcodeImageEnabled(true);
+
+        integrator.setCaptureActivity(CaptureActivity.class);
+
+        //스캐너 시작 메소드
+        integrator.initiateScan();
+    }
+
+    public void myPage(View view){
+
+        // mapInfo_MyPage.setText(MyPage_Message);
+
+        Context mContext = getApplicationContext();
+        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(LAYOUT_INFLATER_SERVICE);
+
+        View layout = inflater.inflate(R.layout.activity_mypage, (ViewGroup) findViewById(R.id.popup));
+        AlertDialog.Builder dialog = new AlertDialog.Builder(MapsNaverActivity.this);
+
+        dialog.setTitle("MyPage");
+        dialog.setView(layout);
+
+        dialog.setNegativeButton("닫기", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        AlertDialog ad = dialog.create();
+        ad.show();
+    }
+
 }
