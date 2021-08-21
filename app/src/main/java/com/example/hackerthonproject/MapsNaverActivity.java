@@ -18,11 +18,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.hackerthonproject.Retrofit.LocationService;
 import com.example.hackerthonproject.Retrofit.RetrofitAPI;
-import com.example.hackerthonproject.Retrofit.RetrofitClient;
-import com.example.hackerthonproject.Retrofit.UserService;
-import com.example.hackerthonproject.dto.LocationDto;
+import com.example.hackerthonproject.Retrofit.RetrofitCall;
 import com.example.hackerthonproject.dto.UserDto;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.journeyapps.barcodescanner.CaptureActivity;
@@ -34,15 +31,9 @@ import com.naver.maps.map.overlay.LocationOverlay;
 import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.overlay.Overlay;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class MapsNaverActivity extends Activity implements OnMapReadyCallback, View.OnClickListener,Overlay.OnClickListener {
@@ -68,33 +59,25 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
         mapView.getMapAsync(this);
         txt2 = findViewById(R.id.textView2);
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:8080/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+        RetrofitCall retrofit = new RetrofitCall();
 
-        RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
+        RetrofitAPI retrofitAPI = retrofit.getRetrofit().create(RetrofitAPI.class);
 
-        Call<UserDto> call = retrofitAPI.getUser(1);
+        Call<UserDto> call = retrofitAPI.getUser(2);
 
         call.enqueue(new Callback<UserDto>() {
             @Override
             public void onResponse(Call<UserDto> call, Response<UserDto> response) {
-                Log.d("IDIDID", "1시작");
                 //response 확인
                 if (response.code() != 200) {
-                    Log.d("IDIDID", "2시작");
                     txt2.setText("Check");
                     return;
                 }
-                Log.d("IDIDID", "3시작");
                 //Get the data into textView
                 String jsony = "";
                 jsony = "ID = " + response.body().getId() +
                         "Name = " + response.body().getName();
-                Log.d("IDIDID", response.body().getName());
-                txt2.append(response.body().getName());
-                Log.d("IDIDID", "4시작");
+                txt2.append(jsony);
             }
 
             @Override
