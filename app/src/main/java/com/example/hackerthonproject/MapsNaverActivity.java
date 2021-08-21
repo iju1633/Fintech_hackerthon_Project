@@ -50,7 +50,8 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
     String MyPage_Message = "마이페이지 정보가 조회되었습니다.";
 
     IntentIntegrator integrator;
-    static LocationService locationService = new LocationService();
+    LocationService locationService = new LocationService();
+    UserDto userDto = new UserDto();
 
 
     @Override
@@ -60,6 +61,7 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
 
         mapView = findViewById(R.id.mapView);
         mapView.getMapAsync(this);
+        Log.d("getName" , String.valueOf(userDto.getName()));
     }
 
     @Override
@@ -76,6 +78,7 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
 
         //////////////////////////
         Marker locationMarker = new Marker();
+
 //        locationMarker.setPosition(new LatLng(locationService.getLatitude(0),126.978374));
 //            locationMarker.setCaptionText(locationService.getName(i));
 //        locationMarker.setMap(naverMap);
