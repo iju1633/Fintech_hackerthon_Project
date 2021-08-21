@@ -10,6 +10,7 @@ import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -101,9 +102,6 @@ public class PopupActivity extends Activity implements View.OnClickListener {
                 point = (Button)findViewById(v.getId());
 
                 txt.setText(info());
-
-                UserService userService = new UserService();
-                System.out.println(userService.getUserDto().getName());
 
             }
         };

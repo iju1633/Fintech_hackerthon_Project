@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 // http api interface 구현체
 public class RetrofitClient {
     // 요청할 서버의 기본 url이다.
-    private static final String BASE_URL = "http://localhost:8080";
+    private static final String BASE_URL = "http://10.0.2.2:8080/";
 
     // service
     // 싱글톤 패턴

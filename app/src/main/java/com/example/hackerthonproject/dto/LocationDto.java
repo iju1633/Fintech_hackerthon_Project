@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class LocationDto {
+
     public int getId() {
         return id;
     }

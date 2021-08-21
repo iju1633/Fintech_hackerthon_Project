@@ -40,6 +40,7 @@ public class LocationService {
             return (Double.parseDouble(locationDto.get(num).getLatitude()));
         }catch (IOException ex){
             ex.printStackTrace();
+            System.out.println("ex = " + ex);
         }
         return null;
     }

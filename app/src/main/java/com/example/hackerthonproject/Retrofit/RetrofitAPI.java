@@ -16,10 +16,10 @@ public interface RetrofitAPI {
 //    @GET("/api/test/")
 //    Call<Object> getUser();
 
-    @GET("/api/test/{id}")
+    @GET("api/test/{id}")
     Call<UserDto> getUser(@Path("id") int id);
 
-    @GET("/location/all")
+    @GET("location/all")
     Call<List<LocationDto> > getLocationList();
 
 
