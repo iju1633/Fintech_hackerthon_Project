@@ -2,16 +2,30 @@ package com.example.hackerthonproject;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Point;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.webkit.WebSettings;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.PopupWindow;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 
 public class PopupActivity extends Activity implements View.OnClickListener {
@@ -32,12 +46,12 @@ public class PopupActivity extends Activity implements View.OnClickListener {
         myPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent intent = new Intent(getApplicationContext(), PopupActivity.class);
-               startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), PopupActivity.class);
+                startActivity(intent);
             }
         });
 
-                // 등급와 등급별 혜택 버튼
+        // 등급와 등급별 혜택 버튼
         level = findViewById(R.id.level);
         Description_Level = findViewById(R.id.Description_Level);
 
