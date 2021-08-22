@@ -18,11 +18,12 @@
         map:layout_constraintTop_toTopOf="parent"
         map:layout_constraintVertical_bias="0.116" />
 
-    <EditText
+    <TextView
         android:id="@+id/mapInfo_MyPage"
         android:layout_width="406dp"
         android:layout_height="105dp"
         android:layout_marginBottom="100dp"
+        android:text="                               자유롭게 아이콘을 눌러보세요"
         map:layout_constraintBottom_toBottomOf="parent"
         map:layout_constraintEnd_toEndOf="parent"
         map:layout_constraintStart_toStartOf="parent"
@@ -31,33 +32,36 @@
 
     <androidx.constraintlayout.utils.widget.ImageFilterButton
         android:id="@+id/QR_Scan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_marginBottom="4dp"
         android:onClick="QR_Scan"
         map:layout_constraintBottom_toBottomOf="parent"
         map:layout_constraintEnd_toEndOf="parent"
-        map:layout_constraintHorizontal_bias="0.606"
+        map:layout_constraintHorizontal_bias="0.651"
         map:layout_constraintStart_toStartOf="parent"
         map:srcCompat="@drawable/qr_icon"
         tools:ignore="OnClick" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterButton
         android:id="@+id/home"
-        android:layout_width="114dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="264dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_marginBottom="4dp"
         android:onClick="home"
         map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.329"
         map:layout_constraintStart_toStartOf="parent"
-        map:srcCompat="@drawable/cash_icon"
+        map:srcCompat="@drawable/home_icon"
         tools:ignore="OnClick" />
 
     <ImageButton
         android:id="@+id/myPage"
-        android:layout_width="119dp"
-        android:layout_height="91dp"
-        android:layout_marginEnd="196dp"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
         android:onClick="myPage"
         android:src="@drawable/icon_mypage"
         map:layout_constraintBottom_toBottomOf="parent"
@@ -66,11 +70,11 @@
 
     <ImageButton
         android:id="@+id/reits"
-        android:layout_width="76dp"
-        android:layout_height="92dp"
-        android:layout_marginEnd="328dp"
-        android:layout_marginBottom="8dp"
-        android:onClick="myPage"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_marginEnd="268dp"
+        android:layout_marginBottom="4dp"
+        android:onClick="reits"
         android:src="@drawable/reits_icon"
         map:layout_constraintBottom_toBottomOf="parent"
         map:layout_constraintEnd_toEndOf="parent"

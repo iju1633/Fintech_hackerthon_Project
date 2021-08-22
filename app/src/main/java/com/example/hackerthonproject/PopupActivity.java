@@ -26,34 +26,22 @@ import android.widget.ImageButton;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-
+import androidx.annotation.NonNull;
 
 
 public class PopupActivity extends Activity implements View.OnClickListener {
 
-    Button myPage, level, Description_Level;
-    ImageButton imageButton;
-    TextView message, point, wallet, breakdown, profile, image, phoneNum, setting, settings, logOut;
+    Button level, Description_Level;
+    ImageButton to_mainPage;
+    TextView message, point, wallet, breakdown, profile, image, setting, settings, logOut;
     TextView userPoint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage);
 
-        myPage = (Button) findViewById(R.id.myPage);
-
-        myPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), PopupActivity.class);
-                startActivity(intent);
-
-            }
-        });
 
         // 등급와 등급별 혜택 버튼
         level = findViewById(R.id.level);
@@ -66,64 +54,32 @@ public class PopupActivity extends Activity implements View.OnClickListener {
         breakdown = findViewById(R.id.breakdown);
         profile = findViewById(R.id.profile);
         image = findViewById(R.id.image);
-        phoneNum = findViewById(R.id.phoneNum);
         setting = findViewById(R.id.setting);
         settings = findViewById(R.id.settings);
         logOut = findViewById(R.id.logOut);
         userPoint = findViewById(R.id.userPoint);
+        to_mainPage = findViewById(R.id.to_mainPage);
 
+        to_mainPage.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PopupActivity.this, MapsNaverActivity.class);
+                startActivity(intent);
+            }
+        });
 
-
-//        popupWindow();
-
-//        // setText 테스트
-//        findViewById(R.id.point).setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        point.setText(info());
-//                    }
-//                }
-//        );
-
-        getWindow().setBackgroundDrawableResource(android.R.color.transparent); // 왜 안되는 거니..
     }
 
+    @Override
     public void onClick(View view) {
 
-        Button.OnClickListener t = new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TextView txt = (TextView) findViewById(R.id.point);
-                point = (Button)findViewById(v.getId());
-
-                txt.setText(info());
-
-            }
-        };
-
-        if (view == myPage) { // view가 alert 이면 팝업실행 즉 버튼을 누르면 팝업창이 뜨는 조건
-
-            Context mContext = getApplicationContext();
-            LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(LAYOUT_INFLATER_SERVICE);
-
-            //R.layout.dialog는 xml 파일명이고  R.id.popup은 보여줄 레이아웃 아이디
-            View layout = inflater.inflate(R.layout.activity_mypage, (ViewGroup) findViewById(R.id.popup));
-            AlertDialog.Builder aDialog = new AlertDialog.Builder(PopupActivity.this);
-
-            //그냥 닫기버튼을 위한 부분
-            aDialog.setNegativeButton("닫기", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int useless) {
-                }
-            });
-
-
-        }
-
     }
 
-    public String info() {
-        return "제발 되라";
-    }
+//    public String info() {
+//        return "제발 되라";
+//    }
+
+
 
 //    private void popupWindow() {
 //        try {

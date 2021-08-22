@@ -165,7 +165,7 @@ public class QrScanActivity extends AppCompatActivity{
             }else{
                 //qr코드를 읽어서 EditText에 입력해줍니다.
                 et.setText(result.getContents());
-                addPoint(); // 같은 바코드를 찍으면 point가 올라가면 안돼!
+                addPoint(); // 같은 바코드를 찍으면 point가 올라가면 안되게 바꿔야해
                 pointCheck.setText("My 포인트 조회");
 
                 //Button의 onclick호출

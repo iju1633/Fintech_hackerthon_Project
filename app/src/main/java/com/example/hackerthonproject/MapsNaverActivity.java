@@ -54,7 +54,7 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
 
     IntentIntegrator integrator;
 
-    ImageButton reits, home, QR_Scan;
+    ImageButton reits, home, QR_Scan, myPage;
 
 
     @Override
@@ -66,6 +66,15 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
         mapView.getMapAsync(this);
 
         reits = findViewById(R.id.reits);
+        myPage = findViewById(R.id.myPage);
+
+        myPage.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MapsNaverActivity.this, PopupActivity.class);
+                startActivity(intent);
+            }
+        });
 
 //         메시지 한 가운데로
 //         mapInfo_MyPage.setGravity(Gravity.CENTER);
@@ -140,7 +149,7 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
     public void QR_Scan(View view){
 
         Intent intent = new Intent(MapsNaverActivity.this, QrScanActivity.class) ;
-        startActivity(intent) ;
+        startActivity(intent);
 
     }
 
@@ -149,26 +158,8 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
     }
 
     public void myPage(View view){
-
-        // mapInfo_MyPage.setText(MyPage_Message);
-
-        Context mContext = getApplicationContext();
-        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(LAYOUT_INFLATER_SERVICE);
-
-        View layout = inflater.inflate(R.layout.activity_mypage, (ViewGroup) findViewById(R.id.popup));
-        AlertDialog.Builder dialog = new AlertDialog.Builder(MapsNaverActivity.this);
-
-        dialog.setTitle("MyPage");
-        dialog.setView(layout);
-
-        dialog.setNegativeButton("닫기", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                }
-        });
-
-        AlertDialog ad = dialog.create();
-        ad.show();
+//        Intent intent = new Intent(MapsNaverActivity.this, PopupActivity.class) ;
+//        startActivity(intent) ;
     }
 
     @Override
@@ -176,3 +167,26 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
 
     }
 }
+//myPage 메서드 안에 있던 거
+// 기존의 팝업창 구현
+//        // mapInfo_MyPage.setText(MyPage_Message);
+//
+//        Context mContext = getApplicationContext();
+//        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(LAYOUT_INFLATER_SERVICE);
+//
+//        View layout = inflater.inflate(R.layout.activity_mypage, (ViewGroup) findViewById(R.id.popup));
+//        AlertDialog.Builder dialog = new AlertDialog.Builder(MapsNaverActivity.this);
+//
+//        dialog.setTitle("MyPage");
+//        dialog.setView(layout);
+//
+//        dialog.setNegativeButton("닫기", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//                }
+//        });
+//
+//        AlertDialog ad = dialog.create();
+//        ad.show();
+
+// 새 창으로 구현

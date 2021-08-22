@@ -48,6 +48,8 @@
         </activity>
 
         <activity android:name=".QrScanActivity" />
+        <activity android:name=".PopupActivity" />
+        <activity android:name=".ToMapsNaverActivity" />
 
     </application>
 
