@@ -131,6 +131,7 @@ public class QrScanActivity extends AppCompatActivity{
 
     public void pointCheck(View view){
         pointCheck.setText(getPoint() + "원");
+        pointCheck.setGravity(Gravity.CENTER);
     }
 
     public void usePoint(View view){

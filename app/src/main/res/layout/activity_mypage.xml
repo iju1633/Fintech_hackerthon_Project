@@ -150,8 +150,9 @@
         android:id="@+id/to_mainPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="163dp"
-        android:layout_y="626dp"
+        android:layout_x="183dp"
+        android:layout_y="635dp"
+        android:tint="#151212"
         app:srcCompat="@drawable/home_icon" />
 
     <EditText

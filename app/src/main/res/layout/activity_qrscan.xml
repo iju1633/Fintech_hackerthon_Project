@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-    <LinearLayout
+    <AbsoluteLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -15,8 +15,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:ems="10"
+            android:text="                            리츠 상품에 투자해보세요"
             android:inputType="textPersonName" />
-    </LinearLayout>
+    </AbsoluteLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +25,7 @@
 
         <Button
             android:id="@+id/usePoint"
-            android:layout_width="176dp"
+            android:layout_width="183dp"
             android:layout_height="wrap_content"
             android:onClick="usePoint"
             android:text="포인트 사용하기"
@@ -32,7 +33,7 @@
 
         <Button
             android:id="@+id/reScan"
-            android:layout_width="match_parent"
+            android:layout_width="209dp"
             android:layout_height="match_parent"
             android:onClick="reScan"
             android:text="QR 스캔"
@@ -52,25 +53,24 @@
         android:layout_width="match_parent"
         android:layout_height="577dp" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <AbsoluteLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/pointCheck"
-            android:layout_width="146dp"
-            android:layout_height="wrap_content"
-            android:onClick="pointCheck"
-            android:text="My 포인트 조회"
-            tools:ignore="OnClick" />
+    </AbsoluteLayout>
 
-        <TextView
-            android:id="@+id/pt"
-            android:layout_width="258dp"
-            android:layout_height="30dp"
-            android:ems="10"
-            android:inputType="textPersonName" />
+    <TextView
+        android:id="@+id/pt"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/pointCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="pointCheck"
+        android:text="My 포인트 조회"
+        tools:ignore="OnClick" />
 </LinearLayout>
