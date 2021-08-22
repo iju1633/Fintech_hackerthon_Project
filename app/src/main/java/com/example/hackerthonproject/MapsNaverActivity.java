@@ -55,6 +55,7 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
     IntentIntegrator integrator;
 
     ImageButton reits, QR_Scan, myPage;
+    List<LocationDto> markerInfo = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +68,6 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
         reits = findViewById(R.id.reits);
         myPage = findViewById(R.id.myPage);
 
-    List<LocationDto> markerInfo = new ArrayList<>();
 
 
         myPage.setOnClickListener(new View.OnClickListener(){
