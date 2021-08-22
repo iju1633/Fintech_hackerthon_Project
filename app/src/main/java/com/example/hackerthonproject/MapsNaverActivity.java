@@ -57,7 +57,7 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
     ImageButton reits, QR_Scan, myPage;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.naver_activity_maps);
 
@@ -66,6 +66,7 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
 
         reits = findViewById(R.id.reits);
         myPage = findViewById(R.id.myPage);
+
 
         myPage.setOnClickListener(new View.OnClickListener(){
             @Override
