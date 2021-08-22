@@ -1,6 +1,14 @@
 package com.example.hackerthonproject.dto;
 
 public class ReitsDto {
+    public ReitsDto(String type, String price, String pcr, String pcp, String volume) {
+        this.type = type;
+        this.price = price;
+        this.pcr = pcr;
+        this.pcp = pcp;
+        this.volume = volume;
+    }
+
     private String type;
     private String price;
     private String pcr;

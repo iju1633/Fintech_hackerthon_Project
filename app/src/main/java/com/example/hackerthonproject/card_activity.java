@@ -3,28 +3,22 @@ package com.example.hackerthonproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.ScrollView;
+import android.util.Log;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import android.location.Address;
-import android.location.Geocoder;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.example.hackerthonproject.Retrofit.RetrofitAPI;
+import com.example.hackerthonproject.Retrofit.RetrofitCall;
+import com.example.hackerthonproject.dto.ProductItem;
+import com.example.hackerthonproject.dto.ReitsDto;
 
-import org.w3c.dom.Text;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class card_activity extends AppCompatActivity {
 
@@ -47,12 +41,30 @@ public class card_activity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL,false));
 
-        /* adapt data */
-        productItems = new ArrayList<>();
-        for(int i=1;i<=26;i++){
 
-            productItems.add(new ProductItem(i+"번째 종목",i+"번째 가격",i+"번째 pcr", i+"번째 pcp", i+"번째 상승폭"));
-        }
+        //////////////////////ReitsDton 받아옴////////////////////
+        RetrofitCall retrofit = new RetrofitCall();
+        RetrofitAPI retrofitAPI = retrofit.getRetrofit().create(RetrofitAPI.class);
+        Call<ArrayList<ProductItem>> call = retrofitAPI.getReitsList();
+        productItems = new ArrayList<>();
+        call.enqueue(new Callback<ArrayList<ProductItem>>() {
+            @Override
+            public void onResponse(Call<ArrayList<ProductItem>> call, Response<ArrayList<ProductItem>> response) {
+                //response 확인
+                if (response.code() != 200) {
+                    return;
+                }
+                myRecyclerAdapter.setFriendList(response.body());
+            }
+            @Override
+            public void onFailure(Call<ArrayList<ProductItem>> call, Throwable t) {
+                Log.wtf("err123", t);
+                Log.d("IDIDID", "5시작");
+            }
+        });
+        ////////////////////////////////////////////
+
+        /* adapt data */
         myRecyclerAdapter.setFriendList(productItems);
     }
 }

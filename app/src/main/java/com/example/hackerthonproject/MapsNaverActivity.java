@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -70,7 +71,6 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
         myPage = findViewById(R.id.myPage);
 
 
-
         myPage.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -79,35 +79,7 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
             }
         });
 
-        RetrofitCall retrofit = new RetrofitCall();
-
-        RetrofitAPI retrofitAPI = retrofit.getRetrofit().create(RetrofitAPI.class);
-
-        Call<List<ReitsDto>> call = retrofitAPI.getReitsList();
-//
-        call.enqueue(new Callback<List<ReitsDto>>() {
-            @Override
-            public void onResponse(Call<List<ReitsDto>> call, Response<List<ReitsDto>> response) {
-                //response 확인
-                if (response.code() != 200) {
-                    return;
-                }
-                for(int i = 0; i < response.body().size(); i++){
-                    Log.d("IDIDID", response.body().get(i).getType());
-                }
-            }
-            @Override
-            public void onFailure(Call<List<ReitsDto>> call, Throwable t) {
-                Log.wtf("err123", t);
-                Log.d("IDIDID", "5시작");
-            }
-        });
-
-//         메시지 한 가운데로
-//         mapInfo_MyPage.setGravity(Gravity.CENTER);
-
     }
-
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {
 

@@ -1,4 +1,4 @@
-package com.example.hackerthonproject;
+package com.example.hackerthonproject.dto;
 
 public class ProductItem {
     private String type;
