@@ -157,6 +157,8 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
 
     public void reits(View view){
 
+        Intent intent = new Intent(this, card_activity.class);
+        startActivity(intent);
     }
 
     public void myPage(View view){

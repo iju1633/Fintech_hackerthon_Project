@@ -110,6 +110,7 @@
         android:layout_height="37dp"
         android:layout_x="121dp"
         android:layout_y="80dp"
+        android:backgroundTint="#060507"
         android:text="GOLD"
         tools:layout_editor_absoluteX="149dp"
         tools:layout_editor_absoluteY="78dp" />
