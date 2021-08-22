@@ -23,6 +23,7 @@ import androidx.annotation.Nullable;
 import com.example.hackerthonproject.Retrofit.RetrofitAPI;
 import com.example.hackerthonproject.Retrofit.RetrofitCall;
 import com.example.hackerthonproject.dto.LocationDto;
+import com.example.hackerthonproject.dto.ReitsDto;
 import com.example.hackerthonproject.dto.UserDto;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.journeyapps.barcodescanner.CaptureActivity;
@@ -75,6 +76,30 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
             public void onClick(View view) {
                 Intent intent = new Intent(MapsNaverActivity.this, PopupActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        RetrofitCall retrofit = new RetrofitCall();
+
+        RetrofitAPI retrofitAPI = retrofit.getRetrofit().create(RetrofitAPI.class);
+
+        Call<List<ReitsDto>> call = retrofitAPI.getReitsList();
+//
+        call.enqueue(new Callback<List<ReitsDto>>() {
+            @Override
+            public void onResponse(Call<List<ReitsDto>> call, Response<List<ReitsDto>> response) {
+                //response 확인
+                if (response.code() != 200) {
+                    return;
+                }
+                for(int i = 0; i < response.body().size(); i++){
+                    Log.d("IDIDID", response.body().get(i).getType());
+                }
+            }
+            @Override
+            public void onFailure(Call<List<ReitsDto>> call, Throwable t) {
+                Log.wtf("err123", t);
+                Log.d("IDIDID", "5시작");
             }
         });
 
@@ -171,26 +196,3 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
 
     }
 }
-//myPage 메서드 안에 있던 거
-// 기존의 팝업창 구현
-//        // mapInfo_MyPage.setText(MyPage_Message);
-//
-//        Context mContext = getApplicationContext();
-//        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(LAYOUT_INFLATER_SERVICE);
-//
-//        View layout = inflater.inflate(R.layout.activity_mypage, (ViewGroup) findViewById(R.id.popup));
-//        AlertDialog.Builder dialog = new AlertDialog.Builder(MapsNaverActivity.this);
-//
-//        dialog.setTitle("MyPage");
-//        dialog.setView(layout);
-//
-//        dialog.setNegativeButton("닫기", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialogInterface, int i) {
-//                }
-//        });
-//
-//        AlertDialog ad = dialog.create();
-//        ad.show();
-
-// 새 창으로 구현
