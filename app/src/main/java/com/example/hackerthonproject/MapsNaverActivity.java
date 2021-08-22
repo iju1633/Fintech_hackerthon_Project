@@ -56,7 +56,6 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
 
     ImageButton reits, QR_Scan, myPage;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
