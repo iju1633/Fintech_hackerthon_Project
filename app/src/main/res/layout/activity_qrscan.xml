@@ -51,7 +51,7 @@
     <WebView
         android:id="@+id/wv"
         android:layout_width="match_parent"
-        android:layout_height="577dp" />
+        android:layout_height="613dp" />
 
     <AbsoluteLayout
         android:layout_width="match_parent"
