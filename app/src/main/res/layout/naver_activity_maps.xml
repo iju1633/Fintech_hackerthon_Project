@@ -38,29 +38,15 @@
         android:onClick="QR_Scan"
         map:layout_constraintBottom_toBottomOf="parent"
         map:layout_constraintEnd_toEndOf="parent"
-        map:layout_constraintHorizontal_bias="0.651"
         map:layout_constraintStart_toStartOf="parent"
         map:srcCompat="@drawable/qr_icon"
-        tools:ignore="OnClick" />
-
-    <androidx.constraintlayout.utils.widget.ImageFilterButton
-        android:id="@+id/home"
-        android:layout_width="95dp"
-        android:layout_height="95dp"
-        android:layout_marginBottom="4dp"
-        android:onClick="home"
-        map:layout_constraintBottom_toBottomOf="parent"
-        map:layout_constraintEnd_toEndOf="parent"
-        map:layout_constraintHorizontal_bias="0.329"
-        map:layout_constraintStart_toStartOf="parent"
-        map:srcCompat="@drawable/home_icon"
         tools:ignore="OnClick" />
 
     <ImageButton
         android:id="@+id/myPage"
         android:layout_width="95dp"
         android:layout_height="95dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="4dp"
         android:onClick="myPage"
         android:src="@drawable/icon_mypage"
@@ -72,7 +58,7 @@
         android:id="@+id/reits"
         android:layout_width="95dp"
         android:layout_height="95dp"
-        android:layout_marginEnd="268dp"
+        android:layout_marginEnd="252dp"
         android:layout_marginBottom="4dp"
         android:onClick="reits"
         android:src="@drawable/reits_icon"

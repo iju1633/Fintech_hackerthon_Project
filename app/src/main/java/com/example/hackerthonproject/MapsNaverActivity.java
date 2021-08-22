@@ -54,7 +54,7 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
 
     IntentIntegrator integrator;
 
-    ImageButton reits, home, QR_Scan, myPage;
+    ImageButton reits, QR_Scan, myPage;
 
 
     @Override
@@ -140,10 +140,6 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
             return true;
         }
         return false;
-    }
-
-    public void home(View view){
-
     }
 
     public void QR_Scan(View view){
