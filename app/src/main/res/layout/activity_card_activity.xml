@@ -49,7 +49,7 @@
                 android:layout_width="185dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="780,000"
+                android:text="3,000"
                 android:textColor="@color/black"
                 android:textSize="28sp"
                 android:textStyle="bold" />
@@ -81,14 +81,37 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="414dp"
+        android:layout_height="430dp"
+        android:layout_marginTop="36dp"
+        android:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"/>
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="242dp"
+        android:layout_height="28dp"
+        android:text="국내 상장된 리츠 상품 목록"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerview"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="414dp"
+        android:layout_height="27dp"
+        android:text="               종목명          현재가     등락률    등락가    거래량"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerview"
+        tools:layout_editor_absoluteX="0dp" />
 
 
-<!--    <ScrollView-->
+    <!--    <ScrollView-->
 <!--        android:id="@+id/scrollView"-->
 <!--        android:layout_width="411dp"-->
 <!--        android:layout_height="458dp"-->

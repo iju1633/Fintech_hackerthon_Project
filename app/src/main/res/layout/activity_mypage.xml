@@ -64,8 +64,9 @@
         android:id="@+id/button4"
         android:layout_width="272dp"
         android:layout_height="15dp"
-        android:layout_x="15dp"
+        android:layout_x="20dp"
         android:layout_y="207dp"
+        android:backgroundTint="#EA1F1F"
         android:text="Button"
         tools:layout_editor_absoluteX="23dp"
         tools:layout_editor_absoluteY="238dp" />
@@ -86,7 +87,7 @@
         android:id="@+id/message"
         android:layout_width="246dp"
         android:layout_height="35dp"
-        android:layout_x="19dp"
+        android:layout_x="22dp"
         android:layout_y="183dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -100,6 +101,7 @@
         android:layout_height="99dp"
         android:layout_x="17dp"
         android:layout_y="49dp"
+        android:src="@drawable/ic_launcher_foreground"
         tools:layout_editor_absoluteX="23dp"
         tools:layout_editor_absoluteY="78dp"
         tools:srcCompat="@tools:sample/avatars" />
@@ -110,7 +112,7 @@
         android:layout_height="37dp"
         android:layout_x="121dp"
         android:layout_y="80dp"
-        android:backgroundTint="#060507"
+        android:backgroundTint="#FFEB3B"
         android:text="GOLD"
         tools:layout_editor_absoluteX="149dp"
         tools:layout_editor_absoluteY="78dp" />
@@ -151,11 +153,10 @@
         android:id="@+id/to_mainPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="183dp"
-        android:layout_y="635dp"
-        android:tint="#151212"
-        android:src = "@drawable/home_icon"
-         />
+        android:layout_x="152dp"
+        android:layout_y="661dp"
+        android:src="@drawable/home_icon"
+        android:tint="#151212" />
 
     <EditText
         android:id="@+id/breakdown"

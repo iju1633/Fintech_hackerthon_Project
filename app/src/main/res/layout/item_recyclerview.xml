@@ -18,9 +18,9 @@
             android:id="@+id/type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="종목"
-            android:textSize="16sp"
+            android:layout_marginLeft="10dp"
+            android:text="종목명"
+            android:textSize="14sp"
             android:textColor="#000"/>
 
         <!--상태 메시지-->
@@ -28,8 +28,8 @@
             android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:text="가격"
+            android:layout_marginLeft="15dp"
+            android:text="현재가"
             android:textSize="12sp"
             android:textColor="#444"
             android:maxLines="1"/>
@@ -38,8 +38,8 @@
             android:id="@+id/pcr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:text="PCR"
+            android:layout_marginLeft="15dp"
+            android:text="등락률"
             android:textSize="12sp"
             android:textColor="#444"
             android:maxLines="1"/>
@@ -48,8 +48,8 @@
             android:id="@+id/pcp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:text="PCP"
+            android:layout_marginLeft="15dp"
+            android:text="등락가"
             android:textSize="12sp"
             android:textColor="#444"
             android:maxLines="1"/>
@@ -58,8 +58,8 @@
             android:id="@+id/volume"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:text="상승폭"
+            android:layout_marginLeft="15dp"
+            android:text="거래량"
             android:textSize="12sp"
             android:textColor="#444"
             android:maxLines="1"/>
