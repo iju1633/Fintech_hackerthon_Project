@@ -67,6 +67,8 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
         reits = findViewById(R.id.reits);
         myPage = findViewById(R.id.myPage);
 
+    List<LocationDto> markerInfo = new ArrayList<>();
+
 
         myPage.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -92,13 +94,11 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
         locationOverlay.setVisible(true);
         locationOverlay.setPosition(new LatLng(latitude, longitude));
 
-         RetrofitCall retrofit = new RetrofitCall();
+        RetrofitCall retrofit = new RetrofitCall();
 
         RetrofitAPI retrofitAPI = retrofit.getRetrofit().create(RetrofitAPI.class);
 
         Call<List<LocationDto>> call = retrofitAPI.getLocationList();
-
-        List<LocationDto> locationsList = new ArrayList<LocationDto>();
 //
         call.enqueue(new Callback<List<LocationDto>>() {
             @Override
@@ -108,6 +108,7 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
                     return;
                 }
                 for(int i = 0; i < response.body().size(); i++){
+                    markerInfo.add(response.body().get(i));
                     Marker marker1 = new Marker();
                     marker1.setPosition(new LatLng( Double.parseDouble(response.body().get(i).getLatitude()), Double.parseDouble(response.body().get(i).getLongitude())));
                     marker1.setMap(naverMap);
@@ -135,7 +136,12 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
     @Override
     public boolean onClick(@NonNull Overlay overlay) {
         if (overlay instanceof Marker) {
-
+            Intent intent = new Intent(MapsNaverActivity.this, mapInfo.class) ;
+            intent.putExtra("name", markerInfo.get(4).getName());
+            intent.putExtra("address", markerInfo.get(4).getAddress());
+            intent.putExtra("info", markerInfo.get(4).getExplanation());
+            intent.putExtra("img", markerInfo.get(4).getImg());
+            startActivity(intent) ;
             Toast.makeText(this.getApplicationContext(), "마커가 선택되었습니다", Toast.LENGTH_LONG).show();
             return true;
         }
