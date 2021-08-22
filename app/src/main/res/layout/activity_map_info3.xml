@@ -9,37 +9,35 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"
-        tools:srcCompat="@tools:sample/avatars"
-        app:layout_constraintTop_toBottomOf="@+id/titleView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
         android:id="@+id/imageView"
-        android:scaleType="centerCrop"/>
+        android:layout_width="370dp"
+        android:layout_height="159dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleView"
+        tools:srcCompat="@tools:sample/avatars" />
+
 
     <TextView
         android:id="@+id/infoView"
-        android:layout_width="388dp"
-        android:layout_height="131dp"
+        android:layout_width="321dp"
+        android:layout_height="210dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-
-
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroup"
-        android:layout_width="376dp"
-        android:layout_height="61dp"
+        android:layout_width="334dp"
+        android:layout_height="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.457"
@@ -52,14 +50,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="#서울 대표 관광지"
-            app:chipBackgroundColor="#8AF81703"/>
+            app:chipBackgroundColor="#8AF81703" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="#해시태크"
-            app:chipBackgroundColor="#8AF81703"/>
+            app:chipBackgroundColor="#8AF81703" />
 
     </com.google.android.material.chip.ChipGroup>
 
@@ -72,7 +70,7 @@
         android:background="@drawable/routine_container_shape"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
-        android:text="32 points"
+        android:text="1000 points"
         android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/titleView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,7 +81,7 @@
         android:id="@+id/titleView"
         android:layout_width="88dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="16dp"
         android:text="경복궁"
         android:textColor="#000000"
@@ -92,17 +90,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="408dp"
-        android:layout_height="238dp"
+        android:layout_width="410dp"
+        android:layout_height="160dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/chipGroup"
         app:layout_constraintTop_toBottomOf="@+id/infoView"
-        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintVertical_bias="0.787"
         tools:layout_editor_absoluteX="0dp">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_width="387dp"
+            android:layout_height="52dp"
             android:layout_marginLeft="20dp"
             android:drawableLeft="@drawable/home_icon"
             android:gravity="center_vertical"
@@ -115,7 +113,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="52dp"
             android:layout_marginLeft="20dp"
             android:drawableLeft="@drawable/time"
             android:gravity="center_vertical"
@@ -126,7 +124,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="52dp"
             android:layout_marginLeft="20dp"
             android:drawableLeft="@drawable/earth_lobe"
             android:gravity="center_vertical"

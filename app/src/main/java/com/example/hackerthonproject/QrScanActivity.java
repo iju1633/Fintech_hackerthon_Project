@@ -53,12 +53,20 @@ public class QrScanActivity extends AppCompatActivity{
         usePoint = findViewById(R.id.usePoint); // 리츠 투자 상품 목록으로 이어지는 버튼
 
         WebSettings webSettings = wv.getSettings();
-        
+
+        //화면 비율
+        webSettings.setUseWideViewPort(true); // wide viewport를 사용하도록 설정
+        webSettings.setLoadWithOverviewMode(true); // 컨텐츠가 웹뷰보다 클 경우 스크린 크기에 맞게 조정
+
+        //웹뷰 멀티 터치 가능하게(줌기능)
+        webSettings.setBuiltInZoomControls(true); // 줌 아이콘 사용
+        webSettings.setSupportZoom(true);
+
 
         // point 조회 가능 및 키보드 없애기 및 텍스트 오른쪽 정렬
         pt.setText(printInfo());
         pt.setShowSoftInputOnFocus(false);
-        // pt.setGravity(Gravity.CENTER);
+        pt.setGravity(Gravity.CENTER);
 
 
 
@@ -108,7 +116,7 @@ public class QrScanActivity extends AppCompatActivity{
 
         //스캐너 시작 메소드
         integrator.initiateScan();
-        
+
     }
 
     public void onClick(View view){
@@ -162,7 +170,7 @@ public class QrScanActivity extends AppCompatActivity{
 
         if(result != null){
             if(result.getContents() == null){
-                
+
             }else{
                 //qr코드를 읽어서 EditText에 입력해줍니다.
                 et.setText(result.getContents());
@@ -206,4 +214,3 @@ public class QrScanActivity extends AppCompatActivity{
         this.bonus = bonus;
     }
 }
-

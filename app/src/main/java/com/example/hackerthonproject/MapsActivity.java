@@ -1,7 +1,6 @@
 package com.example.hackerthonproject;
 
 import android.os.Bundle;
-import android.widget.TextView;
 
 import androidx.fragment.app.FragmentActivity;
 
