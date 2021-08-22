@@ -36,15 +36,21 @@ public class LocationService {
                 }
                 for(int i = 0; i < response.body().size(); i++){
                     locationsList.add(response.body().get(i));
+                    Log.d("IDIDID2",locationsList.get(i).getName());
+                    System.out.println(locationsList.get(i).getName());
                 }
+                Log.d("IDIDID", response.body().get(0).getAddress());
             }
 
             @Override
             public void onFailure(Call<List<LocationDto>> call, Throwable t) {
                 Log.wtf("err123", t);
                 Log.d("IDIDID", "5시작");
+                System.out.println("Tlqkf1");
             }
         });
+//        Log.d("IDIDID2132", locationsList.get(0).getAddress());
+
         return locationsList;
     }
 }

@@ -34,6 +34,7 @@ import com.naver.maps.map.overlay.LocationOverlay;
 import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.overlay.Overlay;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -67,7 +68,7 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
         reits = findViewById(R.id.reits);
 
 //         메시지 한 가운데로
-         mapInfo_MyPage.setGravity(Gravity.CENTER);
+//         mapInfo_MyPage.setGravity(Gravity.CENTER);
 
     }
 
@@ -82,25 +83,38 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
         locationOverlay.setVisible(true);
         locationOverlay.setPosition(new LatLng(latitude, longitude));
 
+         RetrofitCall retrofit = new RetrofitCall();
 
-        Marker marker = new Marker();
-        marker.setPosition(new LatLng(37.5670135, 126.9783740));
-        marker.setMap(naverMap);
+        RetrofitAPI retrofitAPI = retrofit.getRetrofit().create(RetrofitAPI.class);
 
-        marker.setWidth(100);
-        marker.setHeight(100);
-        marker.setOnClickListener(this::onClick);
+        Call<List<LocationDto>> call = retrofitAPI.getLocationList();
 
-        LocationService locationService = new LocationService();
-        List<LocationDto> locationDtoList = locationService.getLocationList();
+        List<LocationDto> locationsList = new ArrayList<LocationDto>();
+//
+        call.enqueue(new Callback<List<LocationDto>>() {
+            @Override
+            public void onResponse(Call<List<LocationDto>> call, Response<List<LocationDto>> response) {
+                //response 확인
+                if (response.code() != 200) {
+                    return;
+                }
+                for(int i = 0; i < response.body().size(); i++){
+                    Marker marker1 = new Marker();
+                    marker1.setPosition(new LatLng( Double.parseDouble(response.body().get(i).getLatitude()), Double.parseDouble(response.body().get(i).getLongitude())));
+                    marker1.setMap(naverMap);
+                    marker1.setOnClickListener(MapsNaverActivity.this::onClick);
+                }
+                Log.d("IDIDID", response.body().get(0).getAddress());
+            }
 
-        for(int i =0; i < locationDtoList.size(); i++){
-            Marker locationMark = new Marker();
-            locationMark.setPosition(new LatLng(Double.parseDouble(locationDtoList.get(i).getLatitude()), Double.parseDouble(locationDtoList.get(i).getLongitude())));
-            locationMark.setCaptionText(locationDtoList.get(i).getName());
-            locationMark.setOnClickListener(this);
-            locationMark.setMap(naverMap);
-        }
+            @Override
+            public void onFailure(Call<List<LocationDto>> call, Throwable t) {
+                Log.wtf("err123", t);
+                Log.d("IDIDID", "5시작");
+                System.out.println("Tlqkf1");
+            }
+
+        });
 
         LatLng coord = new LatLng(37.5670135, 126.9783740);
 
