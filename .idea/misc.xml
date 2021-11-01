@@ -9,7 +9,7 @@
         <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/activity_map_info2.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/activity_map_info3.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/activity_mypage.xml" value="0.22" />
-        <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/activity_qrscan.xml" value="0.29791666666666666" />
+        <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/activity_qrscan.xml" value="0.1" />
         <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/activity_splash.xml" value="0.12" />
         <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/activity_startpage.xml" value="0.12844036697247707" />
         <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/activity_sub.xml" value="0.23020833333333332" />
@@ -23,7 +23,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

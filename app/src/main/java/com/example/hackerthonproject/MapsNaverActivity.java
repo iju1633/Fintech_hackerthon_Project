@@ -123,10 +123,10 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
 
         });
 
-        LatLng coord = new LatLng(37.5670135, 126.9783740);
+        LatLng first_place = new LatLng(37.5670135, 126.9783740); // 광화문 근처로 초기 위치 설정
 
         Toast.makeText(this,
-                "위도: " + coord.latitude + ", 경도: " + coord.longitude,
+                "위도: " + first_place.latitude + ", 경도: " + first_place.longitude,
                 Toast.LENGTH_SHORT).show();
     }
 
