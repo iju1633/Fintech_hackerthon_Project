@@ -47,16 +47,8 @@ import retrofit2.Response;
 public class MapsNaverActivity extends Activity implements OnMapReadyCallback, View.OnClickListener, Overlay.OnClickListener {
 
     MapView mapView;
-    TextView test1;
-    TextView mapInfo_MyPage;
-    TextView txt2;
 
-    String QR_Scan_Message = "QR 코드가 스캔되었습니다.";
-    String MyPage_Message = "마이페이지 정보가 조회되었습니다.";
-
-    IntentIntegrator integrator;
-
-    ImageButton reits, QR_Scan, myPage;
+    ImageButton reits, myPage;
     List<LocationDto> markerInfo = new ArrayList<>();
 
     @Override
@@ -78,8 +70,8 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
                 startActivity(intent);
             }
         });
-
     }
+
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {
 
@@ -96,7 +88,7 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
         RetrofitAPI retrofitAPI = retrofit.getRetrofit().create(RetrofitAPI.class);
 
         Call<List<LocationDto>> call = retrofitAPI.getLocationList();
-//
+
         call.enqueue(new Callback<List<LocationDto>>() {
             @Override
             public void onResponse(Call<List<LocationDto>> call, Response<List<LocationDto>> response) {
@@ -109,7 +101,7 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
                     Marker marker1 = new Marker();
                     marker1.setPosition(new LatLng( Double.parseDouble(response.body().get(i).getLatitude()), Double.parseDouble(response.body().get(i).getLongitude())));
                     marker1.setMap(naverMap);
-                    marker1.setOnClickListener(MapsNaverActivity.this::onClick);
+                    marker1.setOnClickListener(MapsNaverActivity.this::onClick); // onClick의 유일한 usage
                 }
                 Log.d("IDIDID", response.body().get(0).getAddress());
             }
@@ -158,10 +150,7 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
         startActivity(intent);
     }
 
-    public void myPage(View view){
-//        Intent intent = new Intent(MapsNaverActivity.this, PopupActivity.class) ;
-//        startActivity(intent) ;
-    }
+
 
     @Override
     public void onClick(View v) {
