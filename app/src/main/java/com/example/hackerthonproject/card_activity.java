@@ -42,7 +42,7 @@ public class card_activity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL,false));
 
 
-        //////////////////////ReitsDton 받아옴////////////////////
+        //////////////////////ReitsDto 받아옴////////////////////
         RetrofitCall retrofit = new RetrofitCall();
         RetrofitAPI retrofitAPI = retrofit.getRetrofit().create(RetrofitAPI.class);
         Call<ArrayList<ProductItem>> call = retrofitAPI.getReitsList();

@@ -150,10 +150,13 @@ public class MapsNaverActivity extends Activity implements OnMapReadyCallback, V
         startActivity(intent);
     }
 
-
-
     @Override
     public void onClick(View v) {
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
 }

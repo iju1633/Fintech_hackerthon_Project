@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FFFFFF"
+    android:background="#FAF7F7"
     tools:context=".card_activity">
 
     <LinearLayout
@@ -106,17 +106,20 @@
         android:id="@+id/textView6"
         android:layout_width="414dp"
         android:layout_height="27dp"
-        android:text="               종목명          현재가     등락률    등락가    거래량"
+        android:layout_marginBottom="8dp"
+        android:text="             종목명          현재가     등락률    등락가    거래량"
+        android:visibility="visible"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/recyclerview"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintEnd_toEndOf="@id/recyclerview" />
 
 
     <!--    <ScrollView-->
-<!--        android:id="@+id/scrollView"-->
-<!--        android:layout_width="411dp"-->
-<!--        android:layout_height="458dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />-->
+    <!--        android:id="@+id/scrollView"-->
+    <!--        android:layout_width="411dp"-->
+    <!--        android:layout_height="458dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>
