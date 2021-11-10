@@ -72,7 +72,5 @@ public class LocationDto {
     private String longitude;
     private String explanation;
     private String img;
-
-
     private int kinds;
 }
