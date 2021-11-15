@@ -27,12 +27,6 @@ public class mapInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_info3);
 
-
-//        intent.putExtra("name", markerInfo.get(4).getName());
-//        intent.putExtra("address", markerInfo.get(4).getAddress());
-//        intent.putExtra("info", markerInfo.get(4).getExplanation());
-//        intent.putExtra("img", markerInfo.get(4).getImg());
-
         Intent intent = getIntent();
 
         String title = intent.getStringExtra("name");
@@ -42,7 +36,6 @@ public class mapInfo extends AppCompatActivity {
 
         //레이아웃
         titleView = findViewById(R.id.titleView);
-//        addressView = findViewById(R.id.)
         infoView = findViewById(R.id.infoView);
         imgView = findViewById(R.id.imageView);
         pointView = findViewById(R.id.pointView);

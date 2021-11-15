@@ -40,6 +40,7 @@
             android:label="@string/title_activity_maps" >
         </activity>
 
+        <activity android:name=".RecyclerActivity"/>
         <activity android:name=".QrScanActivity" />
         <activity android:name=".PopupActivity" />
         <activity android:name=".ToMapsNaverActivity" />

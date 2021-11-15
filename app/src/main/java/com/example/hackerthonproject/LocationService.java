@@ -1,13 +1,10 @@
 package com.example.hackerthonproject;
 
-import android.location.Location;
 import android.util.Log;
 
 import com.example.hackerthonproject.Retrofit.RetrofitAPI;
 import com.example.hackerthonproject.Retrofit.RetrofitCall;
 import com.example.hackerthonproject.dto.LocationDto;
-import com.naver.maps.geometry.LatLng;
-import com.naver.maps.map.overlay.Marker;
 
 import java.util.ArrayList;
 import java.util.List;

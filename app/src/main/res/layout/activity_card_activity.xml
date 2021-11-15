@@ -31,7 +31,7 @@
             android:layout_width="291dp"
             android:layout_height="77dp"
             android:gravity="center"
-            android:text="Welcome 허원영님"
+            android:text="Welcome 임재욱님"
             android:textColor="#FFFFFF"
             android:textSize="28sp"
             android:textStyle="bold" />

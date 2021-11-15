@@ -9,7 +9,8 @@
         <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/activity_map_info2.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/activity_map_info3.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/activity_maps.xml" value="0.2984375" />
-        <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/activity_mypage.xml" value="0.22" />
+        <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/activity_maps_naver.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/activity_mypage.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/activity_qrscan.xml" value="0.1" />
         <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/activity_splash.xml" value="0.12" />
         <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/activity_startpage.xml" value="0.12844036697247707" />
@@ -17,8 +18,12 @@
         <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/content_popup.xml" value="0.159375" />
         <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/fragment_first.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/fragment_second.xml" value="0.23020833333333332" />
+        <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/item_recycleriew_map.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/item_recyclerview.xml" value="0.14743589743589744" />
         <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/naver_activity_maps.xml" value="0.15730337078651685" />
+        <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/layout/recyclerview.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3828125" />
+        <entry key="..\:/Users/Public/Documents/hackerthonProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3828125" />
         <entry key="app/src/main/res/layout/activity_mypage.xml" value="0.1" />
         <entry key="app/src/main/res/layout/naver_activity_maps.xml" value="0.1897644927536232" />
       </map>
@@ -29,5 +34,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.3333333333333333" />
+      </ProjectState>
+    </option>
   </component>
 </project>

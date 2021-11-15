@@ -135,7 +135,7 @@
         android:layout_y="142dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="허원영 님"
+        android:text="임재욱 님"
         tools:layout_editor_absoluteX="149dp"
         tools:layout_editor_absoluteY="126dp" />
 

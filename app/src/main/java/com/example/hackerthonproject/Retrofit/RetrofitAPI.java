@@ -2,8 +2,6 @@ package com.example.hackerthonproject.Retrofit;
 
 import com.example.hackerthonproject.dto.LocationDto;
 import com.example.hackerthonproject.dto.ProductItem;
-import com.example.hackerthonproject.dto.ReitsDto;
-import com.example.hackerthonproject.dto.UserDto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +17,6 @@ public interface RetrofitAPI {
 //    @GET("/api/test/")
 //    Call<Object> getUser();
 
-    @GET("api/test/{id}")
-    Call<UserDto> getUser(@Path("id") int id);
 
     @GET("location/all")
     Call<List<LocationDto>> getLocationList();

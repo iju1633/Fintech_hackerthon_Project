@@ -12,7 +12,6 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,8 +21,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.journeyapps.barcodescanner.CaptureActivity;
-
-import org.w3c.dom.Text;
 
 
 public class QrScanActivity extends AppCompatActivity{
@@ -69,7 +66,6 @@ public class QrScanActivity extends AppCompatActivity{
         pt.setGravity(Gravity.CENTER);
 
 
-
         // 스캔 완료 후 url수정 방지를 위한 키보드 숨기기
         et.setShowSoftInputOnFocus(false);
 
@@ -111,7 +107,6 @@ public class QrScanActivity extends AppCompatActivity{
         integrator.setBeepEnabled(true);
 
         integrator.setBarcodeImageEnabled(true);
-
         integrator.setCaptureActivity(CaptureActivity.class);
 
         //스캐너 시작 메소드

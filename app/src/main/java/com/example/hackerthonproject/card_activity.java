@@ -59,7 +59,7 @@ public class card_activity extends AppCompatActivity {
             @Override
             public void onFailure(Call<ArrayList<ProductItem>> call, Throwable t) {
                 Log.wtf("err123", t);
-                Log.d("IDIDID", "5시작");
+                Log.d("IDIDID", "문제가 있습니다.");
             }
         });
         ////////////////////////////////////////////
